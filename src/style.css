@@ -17,7 +17,7 @@ body{
     grid-template-rows: 0.25fr 1fr 1fr;
 }
 
-#navbar-container{
+#search-container{
     display: flex;
     width: 50vw;
     height: 0.2fr;
@@ -25,20 +25,35 @@ body{
     background: linear-gradient(to  left,#60605000,#606050);
     margin-top: 2rem;
     gap: 2rem;
+    align-items: flex-end;
+}
+
+
+#input-container{
+    
+    height: 3.4rem;
+    color: grey;
+    font-size: large;
+    
+    
+    margin-top: 2rem;
+    
+}
+
+#input-text{
+    height: 4rem;
+    
+    
+    opacity: 0.2
+}
+
+#input-button{
+    
 }
 
 header img{
    margin-left: 1rem;
 
-}
-
-#navbar{
-    height: 3.4rem;
-    color: grey;
-    font-size: large;
-    
-    align-items: baseline;
-    margin-top: 2rem;
 }
 
 .main{
