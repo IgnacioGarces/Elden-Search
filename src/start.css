@@ -1,0 +1,116 @@
+
+:root{
+    --font: 'Noto Sans JP', sans-serif;
+    --color-inner-golden:#fee19b;
+    --color-outer-golden: #c0600e;
+    --color-elden: #a9941e;
+    --color-white: rgba(197, 200, 175, 0.754);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-size: 62.5%;
+    font-family: var(--font);
+
+    background: black;
+}
+
+
+.main{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+    
+    background: black;    
+
+    animation: fade-in 5s 1;
+}
+
+#logo{
+   width: 60%;
+   height: 50%;
+}
+
+h1{
+    color: var(--color-inner-golden);
+    -webkit-text-stroke: 0.5px var(--color-outer-golden);
+    font-size: 4rem;
+    text-align: center;
+
+    cursor: default;
+}
+
+input{
+    color: var(--color-white);
+    font-size: 2rem;
+    font-family: var(--font);
+    border: none;
+    outline: none;
+    background: transparent;
+
+    width: 30rem;
+    height: 5rem;
+    text-align: center;
+    margin-top: 2rem;
+
+    cursor: pointer;
+
+    animation: fade-in 18s 1;
+    animation: standby 5s infinite;
+}
+
+
+@keyframes fade-in {
+    0%{
+        scale: 0.4;
+        opacity: 0;
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes standby{
+    0%{
+        opacity: 1 ;
+        text-shadow: 0.3px 0.6px var(--color-inner-golden) ;
+        
+    }
+    25%{
+        opacity: 0.8;
+        
+    }
+    50%{
+        opacity: 0.25;
+        
+    }
+    75%{
+        opacity: 0.8;
+        
+    }
+    100%{
+        opacity: 1;
+        text-shadow: 0.3px 0.6px var(--color-inner-golden) ;
+        
+        
+    }
+}
+
+/*
+@keyframes start{
+    0%{
+        background: transparent;
+    }
+    100%{
+        background: var(--color-white);
+    }
+}*/

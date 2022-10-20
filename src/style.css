@@ -1,7 +1,8 @@
 :root{
     --font: 'Noto Sans JP', sans-serif;
-    --color-golden:#ffee00;
-    --color-elden: #fddf32b8;
+    --color-golden:#e0d20c;
+    --color-elden: #a9941e;
+    --color-white: rgba(197, 200, 175, 0.754);
 }
 
 *{
@@ -18,7 +19,6 @@ body{
     background: linear-gradient(#0C0C0C,#5C5F4E);
     background-size: cover;
     background-attachment: fixed;
-    z-index: 0;
     position: absolute;
 }
 
@@ -50,7 +50,7 @@ body{
     top: 4%;
     z-index: 4;
 
-    width: 65vw;
+    width: 75vw;
     height: 8vh;
     padding: 0;
     background: linear-gradient(to  left,#60605000,#606050);
@@ -62,23 +62,28 @@ body{
    
     bottom: 0%;
     display: flex;
-    width: 100%;
+    width: 0%;
     height: 100%;
 
     gap: 2rem;
     padding: 0.5rem;
     margin-left: 1.5rem;
-    
+    transition: all 2s;
 }
+
+body:hover #input-container{
+    width: 100%;
+}
+
 
 #input-text{
     
-    height: 80%;
-    width: 75%;
+    height: 100%;
+    width: 100%;
     border: none;
     background: transparent;
     outline: none;
-    font-size: 2rem;
+    font-size: 3vw;
     color: rgb(197, 200, 175);
 }
 
@@ -87,12 +92,13 @@ body{
     
     height: 90%;   
     left: 80%;
-    top: 0.2rem;
+    margin-top: 0.5rem;
+    transition: all 1s;
 }
 #input-button:hover{
     height: 85%;
-    background-color: var(--color-golden);
-    box-shadow: 0.6rem -0.8rem var(--color-elden);
+    background-color: transparent;
+    box-shadow: 0.6rem -0.5rem var(--color-white);
 }
 
 
@@ -100,14 +106,48 @@ body{
     display: flex;
     flex-flow: column wrap ;
     justify-content:space-between;
-
+    align-items: center;
     margin-top: 1.2rem;
     
 }
 
+#name{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+}
+
+
+.img-container{
+    transition: all 4s;
+}
+
+.img-container img{
+    
+    margin-top: 1rem;
+    margin-left: 4rem;
+    border: 5px  solid #6758009b;
+    border-style: outset;
+    border-radius: 5px;
+    margin-right: 3rem;
+    
+}
+
+.img-container:hover{
+    transform: scale(1.6);
+    margin: 10rem;
+
+}
+
+
 .description-container{
-    
-    
+
     display: flex;
     flex-direction: column;
     height: 50%;
@@ -116,36 +156,23 @@ body{
 }
 
 #description h1{
-    color: #ffee00;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    color: var(--color-golden);
+    margin: 3rem 2rem 3rem 1rem;
     
     font-size: 4rem;
     
     border: 1px solid goldenrod;
     border-style: none none solid none;
+    border-width: 0 0 thin 0;
+    
 }
 
 #description p{
-    color: #fddf32b8;
+    color: var(--color-elden);
     line-height: 3.5rem;
     font-size: 2rem;
-    letter-spacing: 1rem;
-}
-
-.img-container{
-    margin-top: 4rem;
-
-    
-}
-
-.img-container img{
-    
-    margin-left: 4rem;
-    border: 5px  solid #6758009b;
-    border-style: outset;
-    border-radius: 5px;
-    margin-right: 3rem;
+    letter-spacing: 1.2rem;
+    margin: 0 0.5rem 0 0.8rem;
 }
 
 
@@ -155,22 +182,17 @@ footer{
     width: 100%;
     
     display: flex;
+    justify-content: center;
     margin-top: 8rem;
     
-    
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 0.8rem;
-    
+
 }
 
 .info-box {
-    width: 35rem;
-    height: 35rem;
+    width: 75%;
+    height: 80%;
     
-    text-align: center;
+    text-align: left;
     margin-top: 2rem;
     border: 2px  solid #6758009b;
     border-style:groove;
@@ -187,15 +209,15 @@ footer{
 
 .info-box h2{
     font-size: 3.5rem;
-    margin-top: 1.8rem;
-    margin-bottom: 1.8rem;
+    margin: 1.8rem 0 1.8rem 2rem;
     color: var(--color-golden);
 }
 
 
-.basic-template, .stats-template, .attributes-template{
-    display: grid;
-    grid-template-columns: 50% 50%;
+.basic-template{
+    display: flex;
+    flex-flow: column wrap;
+    justify-items: baseline;
     font-size: 2.5rem;
     
 }
@@ -203,12 +225,16 @@ footer{
 .basic-template div{
     width: 1fr;
     height: 4rem;
+    margin: 1rem 0 2.8rem 4.8rem;
     color: var(--color-elden);
 }
 
 
-
-
-@media (){
+@media(min-width:800px){
+    #input-text{
+        font-size: 2vw;
+    }
+}
+@media(max-width:1200px){
 
 }
