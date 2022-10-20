@@ -50,7 +50,7 @@ body{
     top: 4%;
     z-index: 4;
 
-    width: 65vw;
+    width: 75vw;
     height: 8vh;
     padding: 0;
     background: linear-gradient(to  left,#60605000,#606050);
@@ -68,11 +68,11 @@ body{
     gap: 2rem;
     padding: 0.5rem;
     margin-left: 1.5rem;
+    transition: all 2s;
 }
 
-body:: #input-container{
+body:hover #input-container{
     width: 100%;
-    transition: width 2s;
 }
 
 
@@ -93,12 +93,12 @@ body:: #input-container{
     height: 90%;   
     left: 80%;
     margin-top: 0.5rem;
+    transition: all 1s;
 }
 #input-button:hover{
     height: 85%;
     background-color: transparent;
     box-shadow: 0.6rem -0.5rem var(--color-white);
-    transition: box-shadow 1s;
 }
 
 
@@ -125,22 +125,23 @@ body:: #input-container{
 
 
 .img-container{
-    margin-top: 1rem;
+    transition: all 4s;
 }
 
 .img-container img{
     
+    margin-top: 1rem;
     margin-left: 4rem;
     border: 5px  solid #6758009b;
     border-style: outset;
     border-radius: 5px;
     margin-right: 3rem;
+    
 }
 
 .img-container:hover{
     transform: scale(1.6);
     margin: 10rem;
-    transition: all 4s;
 
 }
 
@@ -156,7 +157,7 @@ body:: #input-container{
 
 #description h1{
     color: var(--color-golden);
-    margin: 3rem 5rem 3rem 0.4rem;
+    margin: 3rem 2rem 3rem 1rem;
     
     font-size: 4rem;
     
