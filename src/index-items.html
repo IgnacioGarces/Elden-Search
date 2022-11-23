@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elden-Search Item</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./items.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +14,8 @@
 
 
 
-<body>
-    <div class="main-main-container"></div>
+<body class="body" >
+    
     <div class="main-container">
 
         <header id="search-container">
@@ -23,8 +23,10 @@
             
             <form action="" method="get" id="input-container">
                     
-             <input id="input-text" type="text" name="busqueda" placeholder="search anything....">
-             <input id="input-button" type="image" name="submit" src="../resourses/search-icon.svg" alt="Submit">
+             <input id="input-text" type="text" name="search" placeholder="search anything....">
+             
+             <input id="button" type="image" name="submit" src="../resourses/search-icon.svg" alt="Submit" onclick='buscar()'>
+             
                     
             </form>
            
@@ -33,35 +35,32 @@
 
         <main class="main">
 
-            <h2 id="name">Blue Cipher Ring</h2>
-            <div class="img-container"><img src="https://eldenring.fanapis.com/images/items/17f69e47912l0i1z0lip3kamll88h.png" alt="item-picture"></div>
             
+            <h2 id="name"></h2>
+            <div class="img-container"><img id="image" src="../resourses/Cuadro.svg" alt="item-picture"></div>
+            
+        </main>
+        
+        <footer>
             <section class="description-container">
                 <div id="description">
                     <h1>Description</h1>
-                    <p>Item for online play. Puts the wearer in ready state to answer should someone in another world call for rescue. You will be summoned to their world as a hunter. When summoned to rescue another player, your objective will be to defeat the invader. </p>
+                    <p id="texto"></p>
                 </div>
             </section>
-    
-
-        </main>
-
-        <footer>
+            
+            
             <div class="info-box">
-                <h2>Effect</h2>
+                <h2>Effect:</h2>
                 <section class="basic-template">
-                   <div id="effect">
-                    effect: "Enables the wearer to answer calls for rescue"
-                   </div>
-                   <div id="scaling">
-                    scaling: "Reusable"
-                   </div>
+                   <div id="effect"></div>
+                   <div id="scaling"></div>
                 </section>
             </div>
-
-           
+            
         </footer>
 
     </div>
+    <script  src="./items.js"></script>
 </body>
 </html>
