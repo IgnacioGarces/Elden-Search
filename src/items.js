@@ -22,12 +22,13 @@ let count = 0;
 let founds = [];
 
 
-
-
 //Fn que permite prevenir el comportamiento default del input-button
 function handleForm(e) {
     e.preventDefault()
 }
+
+//se lo agrego al form para que no me recargue la pagina
+form.addEventListener('submit', handleForm);
 
 //Fn que realiza un fetch sobre el argumento pasado.
 function fetchData(urlApi) {
@@ -35,17 +36,8 @@ function fetchData(urlApi) {
 }
 
 
-//se lo agrego al form para que no me recargue la pagina
-form.addEventListener('submit', handleForm);
-// form.addEventListener('onclick', buscar());
-// button.addEventListener('click', ()=>{ search = input.value});
-// button.addEventListener('click', ()=>{ count = 0});
-
-
-
 //Fn Nueva palabra
 let newWord = async() => {
-    
     search = input.value;
     palabra = search.replace(/(\w)(\w*)/g, function(g0,g1,g2){return g1.toUpperCase() + g2.toLowerCase();});
     return palabra
@@ -59,13 +51,10 @@ function reset() {
 }    
 
 
-
 //Funcion que busca la palabra ingresada
 const buscar = async() => {
-    
     //guardo el nombre de la busqueda en una variable/convierto search a Pascal Case
     let word = await newWord(); 
-    
     
     let objs = await fetchData(`${API}/items?limit=20&page=${count}`)
     .then(res => res.json())
@@ -85,15 +74,12 @@ const buscar = async() => {
         return founds
     });
     let result = new Set(objs);
-    
     return result
 }
 
 
-
 //Fn que agrega los nodos a la pag
 const displaySearch = async (array) => {
-
     array = await buscar()
 
     //Por cada objeto en el array, creo en el dom su lugar
@@ -162,102 +148,3 @@ const displaySearch = async (array) => {
     })
    return reset()
 }
-
-
-
-// function buscar() {
-    
-    //     //guardo el nombre de la busqueda en una variable/convierto search a Pascal Case
-    //     search = input.value;
-    //     word = search.replace(/(\wwordg, function(g0,g1,g2){return g1.toUpperCase() + g2.toLowerCase();});
-   
-//     fetchData(`${API}/items?limit=20&page=${count}`)
-//     .then(res => res.json())
-//     .then(info => info.data)
-    
-//     .catch(err => console.log(err))
-//     .finally(console.log(`proceso finalizado`))
-//     .then(ayarray => {
-//         arr.forEach(element => {
-//             if (element.name.includes(palabra)) {
-//                             texto.textContent = element.description;
-//                             titulo.textContent = element.name;
-//                             imagen.src = element.image;
-//                             effect.textContent = element.effect;
-//                             type.textContent = element.type; 
-                            
-//                             return alert('item encontrado')
-//                         } 
-//                         else if (!element.name.includes(palabra) && count <= 24) {    
-//                             count++
-//                             return buscar()
-//                         } 
-//                         else { 
-//                             count = 0
-//                             return alert('Item no encontrado')
-//                         }
-                        
-//                     })
-//         });
-//     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let filtro = arr.filter(element => {
-//         if (element.name.includes(palabra)) {
-//             texto.textContent = element.description;
-//             titulo.textContent = element.name;
-//             imagen.src = element.image;
-//             effect.textContent = element.effect;
-//             type.textContent = element.type; 
-            
-//             return alert('item encontrado')
-//         } 
-//         else if (!element.name.includes(palabra) && count <= 24) {    
-//             count++
-//             return filtro()
-//         } 
-//         else { 
-//             count = 0
-//             return alert('Item no encontrado')
-//         }
-        
-//     })
-
-
-
-// .then(arr => {
-//         for (let i = 0; i < arr.length; i++) {
-            
-//                 if(arr[i].name.includes(`${palabra}`)){
-//                 count = 0;
-//                 texto.textContent = arr[i].description;
-//                 titulo.textContent = arr[i].name;
-//                 imagen.src = arr[i].image;
-//                 effect.textContent = arr[i].effect;
-//                 type.textContent = arr[i].type; 
-                
-//                 return alert('item encontrado')
-//             } 
-//             else if (!arr[i].name.includes(`${palabra}`) && count <= 24) {
-//                 count++
-//                 return buscar()
-//             } 
-//             else {
-//                 count = 0
-//                 return alert('Item no encontrado')
-//             }}
-//     })
-// }
