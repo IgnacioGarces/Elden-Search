@@ -53,22 +53,29 @@ html{
     margin-top: 2rem;
 }
 
-header:hover #input-container{
-    width: 100%;
-}
 
 
 #input-container{
+    animation: Streach 3s ease-in;
     
     bottom: 0%;
     display: flex;
-    width: 0%;
+    width: 100%;
     height: 100%;
     
     gap: 2rem;
     padding: 0.5rem;
     margin-left: 1.5rem;
-    transition: all 2s;
+    /* transition: all 2s; */
+}
+
+@keyframes Streach{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
 }
 
 
@@ -77,11 +84,13 @@ header:hover #input-container{
     height: 100%;
     width: 100%;
     border: none;
+    
     background: transparent;
     outline: none;
     font-size: 3vw;
     color: rgb(197, 200, 175);
 }
+
 
 
 #button{
@@ -108,7 +117,7 @@ header:hover #input-container{
     
 }
 
-#name{
+.name{
     width: 100%;
     height: 25%;
     display: flex;
@@ -121,12 +130,11 @@ header:hover #input-container{
 }
 
 
-.img-container{
+.image{
     transition: all 4s;
-}
-
-.img-container img{
     
+    min-width: 30rem;
+    min-height: 30rem;
     margin-top: 1rem;
     margin-left: 4rem;
     border: 5px  solid #6758009b;
@@ -136,7 +144,7 @@ header:hover #input-container{
     
 }
 
-.img-container:hover{
+.image:hover{
     transform: scale(1.6);
     margin: 10rem;
     
@@ -163,12 +171,12 @@ footer{
     display: flex;
     flex-direction: column;
     height: 50%;
-    width: 80%;
+    width: 98%;
     margin: 6rem 0 4rem 0;
     
 }
 
-#description h1{
+#description{
     color: var(--color-golden);
     margin: 0rem 2rem 3rem 1rem;
     
@@ -180,7 +188,7 @@ footer{
     
 }
 
-#description p{
+#texto{
     color: var(--color-elden);
     line-height: 3.5rem;
     font-size: 2rem;
@@ -189,8 +197,8 @@ footer{
 }
 
 .info-box {
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 60%;
     
     text-align: center;
    
